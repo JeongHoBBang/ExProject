@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.boardver4.board.BoardMapper">
+    <insert id="insBoard">
+        insert into b_board
+        set iuser=#{iuser}
+        ,nm=#{nm}
+        ,title=#{title}
+        ,text=#{text}
+    </insert>
+    <update id="updBoard">
+        update b_board
+        set title=#{title}
+        ,text=#{text}
+        where iuser=#{iuser} and iboard=#{iboard}
+    </update>
+    <select id="selBoard">
+        select *
+        from b_board
+    </select>
+    <select id="pageBoard" resultType="BoardPageDto">
+        select A.iboard, A.title,B.nm writer, A.create_At  createAt
+        from b_board A
+        inner join b_user B
+        on A.iuser=B.iuser
+        where A.iuser=#{iuser}
+        order by iboard desc
+        Limit #{startidx},#{row}
+    </select>
+    <select id="deBoard">
+        select iuser, iboard, title, text
+        from b_board
+        where iboard=#{iboard} and iuser=#{iuser}
+    </select>
+
+
+</mapper>

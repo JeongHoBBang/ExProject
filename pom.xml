@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.green</groupId>
-	<artifactId>BoardVer4</artifactId>
+	<artifactId>boardver4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BoardVer4</name>
 	<description>BoardVer4</description>

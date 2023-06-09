@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.boardver4.Tag.TagMapper">
+<insert id="insTag">
+    insert into b_tag
+    set iuser=#{iuser}
+    ,iboard=#{iboard}
+    ,ctnt=#{ctnt}
+</insert>
+<select id="selTag" resultType="TagVo">
+    select ctnt
+    from b_tag
+    where iboard=#{iboard}
+</select>
+
+</mapper>
